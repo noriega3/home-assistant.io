@@ -12,7 +12,7 @@ ha_domain: input_boolean
 ha_integration_type: helper
 ---
 
-The **Input boolean** helper integration allows you to define boolean values that
+The **Input boolean** helper {% term integration %} allows you to define boolean values that
 can be controlled via the user interface and can be used within conditions of
 an {% term automation %}. This can for example be used to disable or enable certain
 automations by using them in their {% term conditions %}.
@@ -61,23 +61,12 @@ input_boolean:
     icon: mdi:car
 ```
 
-## Actions
+{% include integrations/actions.md %}
 
-This integration provides the following {% term actions %} to modify the state of the
-`input_boolean` and an action to reload the configuration without restarting
-Home Assistant itself.
-
-| Action     | Data                           | Description                                                 |
-| ---------- | ------------------------------ | ----------------------------------------------------------- |
-| `turn_on`  | `entity_id(s)`<br>`area_id(s)` | Set the value of specific `input_boolean` entities to `on`  |
-| `turn_off` | `entity_id(s)`<br>`area_id(s)` | Set the value of specific `input_boolean` entities to `off` |
-| `toggle`   | `entity_id(s)`<br>`area_id(s)` | Toggle the value of specific `input_boolean` entities       |
-| `reload`   |                                | Reload `input_boolean` configuration                        |
-
-### Restore state
+## Restore state
 
 If you set a valid value for `initial` this integration will start with the state
-set to that value. Otherwise, it will restore the state it had prior to
+set to that value. Otherwise, it will restore the state it had before
 Home Assistant stopping; if there is no state to restore - an `off` value is set. 
 
 ## Automation examples

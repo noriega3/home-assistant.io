@@ -12,7 +12,7 @@ ha_integration_type: integration
 ha_quality_scale: legacy
 ---
 
-This integration communicates with the Greenwave Reality (TCP Connected) Gateway to allow control of all lights and fixtures registered to the gateway. Bulbs and Fixtures can be created and modified inside the TCP Lighting App for Android and iOS.
+This {% term integration %} communicates with the Greenwave Reality (TCP Connected) Gateway to allow control of all lights and fixtures registered to the gateway. Bulbs and Fixtures can be created and modified inside the TCP Lighting App for Android and iOS.
 
 This integration has been tested on firmware revisions:
 
@@ -26,7 +26,7 @@ light:
     host: XXX.XXX.XXX.XXX
     version: 3
 ```
-The version option is the major revision of your firmware, which should be 2 or 3. If you are running Version 2, there are no extra steps. If you are running Version 3, you must press the Sync button on the gateway prior to the first launch of Home Assistant, so a token can be grabbed. Once Home Assistant has started, you can either press the Sync button again or wait for it to time out manually.
+The version option is the major revision of your firmware, which should be 2 or 3. If you are running Version 2, there are no extra steps. If you are running Version 3, you must press the Sync button on the gateway before the first launch of Home Assistant, so a token can be grabbed. Once Home Assistant has started, you can either press the Sync button again or wait for it to time out manually.
 
 {% configuration %}
 host:

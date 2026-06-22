@@ -9,7 +9,6 @@ ha_iot_class: Cloud Polling
 ha_domain: ezviz
 ha_codeowners:
   - '@RenierM26'
-  - '@baqs'
 ha_config_flow: true
 ha_platforms:
   - alarm_control_panel
@@ -30,7 +29,7 @@ related:
     title: Controlling the camera from the dashboard
 ---
 
-The `ezviz` sensor platform uses the ezvizlife.com API to interact with the devices.
+The **EZVIZ** integration uses the ezvizlife.com API to interact with the devices.
 It also exposes an RTSP stream, by using the local camera IPs (so the device hosting Home Assistant has to be able to access the local IP of the cameras).
 
 As there is no official documentation for the API, the integration retrieves data from the API used in the EZVIZ mobile app, [hosted here](https://apiieu.ezvizlife.com).
@@ -59,7 +58,7 @@ You can also change the camera options should you need to access a high or low r
 
 - Example: If you set the **Request Timeout** to 30 seconds (default option), Home Assistant will wait up to 30 seconds for a response from the EZVIZ API before timing out.
 
-- Please note this only works on the main EZVIZ cloud entity.
+- This only works on the main EZVIZ cloud entity.
 
 `Arguments passed to ffmpeg for cameras`:
 
@@ -71,7 +70,7 @@ You can also change the camera options should you need to access a high or low r
 
 - Cameras typically default to the main stream if this is invalid or not specified.
 
-- Please note this only works on the camera entities.
+- This only works on the camera entities.
 
 ### Action `ezviz.alarm_sound`
 
@@ -157,6 +156,18 @@ Once triggered, the siren will automatically deactivate after 60 seconds (EZVIZ 
 ### Warning sound
 
 If your camera supports motion detection warning sounds, you can use this entity to select the level.
+
+### Battery work mode
+
+For battery powered cameras, you can use this entity to select the battery work mode to optimize your battery consumption.
+
+| Battery work mode              | Description                                                                                          |
+| ---------------------- | ---------------------------------------------------------------------------------------------------- |
+| Plugged in             | The camera will keep recording. The camera should be plugged in.                                     |
+| High performance       | One video clip is longer but saves less power.                                                       |
+| Power save             | One video clip is shorter and saves more power.                                                      |
+| Super power saving     | Sleep mode is on. Active live view can wake up the camera.                                           |
+| Custom                 | The camera will use the schedules registered in the app.                                            |
 
 ### Light entity
 

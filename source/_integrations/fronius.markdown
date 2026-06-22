@@ -14,11 +14,11 @@ ha_platforms:
   - diagnostics
   - sensor
 ha_dhcp: true
-ha_integration_type: integration
+ha_integration_type: hub
 ha_quality_scale: platinum
 ---
 
-The Fronius integration polls a [Fronius](https://www.fronius.com/) solar inverter or datalogger for details of a Fronius SolarNet setup and integrate it in your Home Assistant installation.
+The **Fronius** {% term integration %} polls a [Fronius](https://www.fronius.com/) solar inverter or datalogger for details of a Fronius SolarNet setup and integrate it in your Home Assistant installation.
 
 ## Supported devices
 
@@ -33,6 +33,7 @@ The integration supports all inverters with integrated Datamanager or external "
 - Symo
 - Symo Hybrid
 - Tauro
+- Verto (Plus) 
 
 Devices connected to those inverters or dataloggers are supported as well.
 
@@ -181,7 +182,7 @@ The Solar API used by this integration is read-only. It does not provide any mea
 
 ## Troubleshooting
 
-### Can’t setup the device
+### Can’t set up the device
 
 - Make sure the device is not in a power-saving mode when currently not producing energy.
 - Make sure the device is connected to the network and is reachable from the Home Assistant instance.

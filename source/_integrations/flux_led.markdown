@@ -1,6 +1,6 @@
 ---
 title: Magic Home
-description: Instructions on how to setup Magic Home within Home Assistant.
+description: Instructions on how to set up Magic Home within Home Assistant.
 ha_category:
   - Button
   - Light
@@ -26,7 +26,7 @@ ha_dhcp: true
 ha_integration_type: integration
 ---
 
-The Magic Home integration supports several brands of switches, bulbs, and controllers that use the same protocol. Chances are high that your bulb or controller (eg. WiFi LED CONTROLLER) will work with this integration if you can control the device with the Magic Home app or the Surp Life app.
+The **Magic Home** {% term integration %} supports several brands of switches, bulbs, and controllers that use the same protocol. Chances are high that your bulb or controller (eg. WiFi LED CONTROLLER) will work with this integration if you can control the device with the Magic Home app or the Surp Life app.
 
 This integration will provide local control over your LED lights/strips and can be configured to auto-scan your network for controllers or for you to manually configure individual lights by their IP address.
 
@@ -207,7 +207,7 @@ If a strip controller device will not stay on wifi or goes offline during adjust
 
 ### Effects
 
-The Magic Home light offers a number of effects which are not included in other lighting packages. These can be selected from the front-end, or sent in the effect field of the `light.turn_on` command.
+The Magic Home light offers several effects which are not included in other lighting packages. These can be selected from the front-end, or sent in the effect field of the `light.turn_on` command.
 
 | Effect Name                                                                                                  | Description                                                        |
 |--------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------|

@@ -12,14 +12,14 @@ ha_domain: input_button
 ha_integration_type: helper
 ---
 
-The **Input button** helper integration allows you to define buttons that
+The **Input button** helper {% term integration %} allows you to define buttons that
 can be pressed via the user interface, and can be used to trigger things,
 like an automation.
 
 ## Configuration
 
 The preferred way to configure button helpers is via the user interface.
-To add one, go to **{% my helpers title="Settings -> Devices & services -> Helpers" %}**
+To add one, go to **{% my helpers title="**Settings** > **Devices & services** > **Helpers**" %}**
 and click the add button; next choose the **{% my config_flow_start domain="input_button" title="Button" %}** option.
 
 To be able to add **Helpers** via the user interface you should have
@@ -61,7 +61,7 @@ The `input_button` entity is stateless, as in, it cannot have a state like the
 
 Every input button entity does keep track of the timestamp of when the last time
 the input button entity has been pressed in the Home Assistant UI or pressed via
-a service call.
+an action.
 
 Because the state of a input button entity in Home Assistant is a timestamp, it
 means we can use it in our automations. For example:
@@ -76,15 +76,4 @@ actions:
       message: "My button has been pressed!"
 ```
 
-## Actions
-
-The input button entities exposes a single action:
-{% my developer_call_service service="input_button.press" %}
-
-This action can be used to trigger a button press for that entity.
-
-```yaml
-- action: input_button.press
-  target:
-    entity_id: input_button.my_button
-```
+{% include integrations/actions.md %}

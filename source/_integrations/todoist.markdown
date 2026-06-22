@@ -12,7 +12,7 @@ ha_domain: todoist
 ha_platforms:
   - calendar
   - todo
-ha_integration_type: integration
+ha_integration_type: service
 ha_config_flow: true
 related:
   - docs: /integrations/todo
@@ -29,10 +29,10 @@ related:
     title: Todoist projects
 ---
 
-This platform allows you to connect to your [Todoist projects](https://todoist.com) as [todo](/integrations/todo/) or [calendar](/integrations/calendar/) entities. All tasks get updated roughly every 15 minutes.
+This {% term integration %} allows you to connect to your [Todoist projects](https://todoist.com) as [todo](/integrations/todo/) or [calendar](/integrations/calendar/) entities. All tasks get updated roughly every minute.
 
 
-A calendar entity will be `on` if you have a task due in that project. It will be `off` if all the tasks in the project are completed or if the project doesn't have any tasks at all.
+A {% term calendar %} entity will be `on` if you have a task due in that project. It will be `off` if all the tasks in the project are completed or if the project doesn't have any tasks at all.
 
 ## Prerequisites
 
@@ -70,7 +70,7 @@ custom_projects:
       required: false
       type: list
     labels:
-      description: Only include tasks with at least one of these labels (i.e., this works as an `or` statement).
+      description: Only include tasks with at least one of these labels (that is, this works as an `or` statement).
       required: false
       type: list
 {% endconfiguration %}
@@ -135,7 +135,7 @@ the Todoist UI.
 
  - **location**: Not used.
 
- - **start_time**: The last time the Todoist integration got updated. Usually within the last 15 minutes.
+ - **start_time**: The last time the Todoist integration got updated. Usually within the last minute.
 
  - **end_time**: When the task is due.
 

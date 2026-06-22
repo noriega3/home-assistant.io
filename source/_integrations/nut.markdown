@@ -24,6 +24,7 @@ ha_integration_type: device
 related:
   - url: https://www.networkupstools.org
     title: Network UPS Tools
+ha_quality_scale: platinum
 ---
 
 The **Network UPS Tools (NUT)** {% term integration %} allows you to monitor and manage an Uninterruptible Power Supply (UPS) for battery backup, a Power Distribution Unit (PDU), or other similar power device using a [NUT](https://networkupstools.org/) server. It lets you view the status, receive notifications about important events, and execute commands as device actions for one or more such devices.
@@ -444,7 +445,7 @@ Ensure the user you specify has the required permissions to execute the desired 
 
 In this example, the user `my_user` has permission to execute all commands (`instcmds = ALL`).
 
-Please note that Home Assistant cannot determine whether a user can access a specific action without executing it. If you attempt to perform an action for which the user does not have permission, an exception will be thrown at runtime.
+Home Assistant cannot determine whether a user can access a specific action without executing it. If you attempt to perform an action for which the user does not have permission, an exception will be thrown at runtime.
 
 ## Removing the integration
 

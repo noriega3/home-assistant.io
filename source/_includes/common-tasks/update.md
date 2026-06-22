@@ -1,9 +1,12 @@
-Best practice for updating Home Assistant Core:
+#### Prerequisites
 
 1. [Back up your installation](/common-tasks/general/#backups) and store the backup and the [backup emergency kit](/more-info/backup-emergency-kit/) somewhere safe.
    - This ensures that you can [restore your installation from backup](/common-tasks/general/#restoring-a-backup) if needed.
 2. Check the release notes for backward-incompatible changes on [Home Assistant release notes](/blog/categories/core/). Be sure to check all release notes between the version you are running and the one you are upgrading to. Use the search function in your browser (`CTRL + f` / `CMD + f`) and search for **Backward-incompatible changes**.
-3. To update Home Assistant Core, choose one of the following options.
+
+#### To update Home Assistant Core
+
+To update Home Assistant Core, choose one of the following options.
 
 {% if page.installation == "os" %}
 
@@ -13,13 +16,17 @@ Best practice for updating Home Assistant Core:
     content: |
 
       1. Open your Home Assistant UI.
-      2. Navigate to the **Settings** panel.
+      2. Go to the **Settings** panel.
       3. On the top you will be presented with an update notification.
-        - **Troubleshooting**: If you do not see that notification:
+        - Troubleshooting: If you do not see that notification:
           - In the top right corner, select the three dots {% icon "mdi:dots-vertical" %} menu and select **Check for updates**.
           - Go to {% my updates title="**System** > **Updates**" %}.
             - Select the update notification.
             - Select the cogwheel {% icon "mdi:cog-outline" %}, then set **Visible** to active.
+      4. Open the notification for the component you want to update.
+      5. If you want to backup the system first (recommended), enable the backup toggle.
+      6. Select **Update**.
+      7. After the update completed, check if there are any repair issues and check the logs to see if there are any issues with your configuration that need to be addressed.
 
   - title: Using the CLI
     content: |
@@ -57,6 +64,7 @@ Best practice for updating Home Assistant Core:
 
   {% endtabbed_block %}
 
+After the update, check if there are any repair issues and check the logs to see if there are any issues with your configuration that need to be addressed.
+
 {% endif %}
 
-4. Check if there are any repair issues and check the logs to see if there are any issues with your configuration that need to be addressed.

@@ -69,7 +69,7 @@ Over 6000 devices from 60 brands are compatible with the Overkiz platform. This 
 
 The Overkiz integration supports both the Overkiz cloud API and the local API (only supported by some Somfy hubs). For compatible Somfy hubs, you can connect locally, allowing device control without an internet connection. Start by selecting the server or app that you use to control your devices.
 
-### Login to Overkiz (Cloud API)
+### Log in to Overkiz (Cloud API)
 
 {% configuration_basic %}
 "Username":
@@ -78,7 +78,7 @@ Password:
   description: "Password for your Overkiz cloud account (account you use in your IoT app)."
 {% endconfiguration_basic %}
 
-### Login to Overkiz (Local API)
+### Log in to Overkiz (Local API)
 
 To use the local API, you must enable [Somfy TaHoma Developer Mode](https://github.com/Somfy-Developer/Somfy-TaHoma-Developer-Mode?tab=readme-ov-file#getting-started) in the TaHoma by Somfy app. Follow the [official instructions](https://github.com/Somfy-Developer/Somfy-TaHoma-Developer-Mode?tab=readme-ov-file#getting-started) to generate a token. This token is required to connect Home Assistant to your hub using the local API.
 
@@ -93,19 +93,27 @@ Verify SSL:
   description: "Verify the SSL certificate of your hub. This option is available only when connecting via the hostname."
 {% endconfiguration_basic %}
 
+{% include integrations/actions.md %}
+
 ## Data updates
 
 This integration retrieves data from Overkiz every 30 seconds to ensure timely updates. If you only have stateless devices (RTS protocol), the integration will poll for new data every hour to reduce unnecessary load on the Overkiz API.
 
 ## Known limitations
 
-### Zigbee, Z-Wave, Hue, and Sonos devices not supported
+### Unsupported hardware
+
+Some devices that appear in your vendor app may not use the Overkiz platform and are not accessible through the Overkiz API. For example, Somfy Protect devices and some Atlantic Cozytouch devices are not supported by this integration.
+
+If you have a Cozytouch device that is not supported by the Overkiz integration, you can explore [custom components](https://github.com/gduteil/cozytouch) created by the community. These may provide support for additional Cozytouch devices.
+
+### Zigbee, Z-Wave, Hue, and Sonos devices are not supported
 
 Even though most Overkiz hubs support adding Zigbee, Z-Wave, Hue, and Sonos devices, this isn't supported in the Overkiz integration. All these platforms have native integrations in Home Assistant, which provide more frequent state updates and are more feature-rich.
 
 ### Stateless RTS covers 
 
-RTS covers do not report their state back to the hub, so Home Assistant cannot track their state after they are controlled. If you only control your RTS cover from Home Assistant, you can use the [template cover](/integrations/cover.template/) to create a stateful cover entity. This will help you track the current state (open or closed) and use the cover in automations and scenes.
+RTS covers do not report their state back to the hub, so Home Assistant cannot track their state after they are controlled. If you only control your RTS cover from Home Assistant, you can use the [template cover](/integrations/template/#cover) to create a stateful cover entity. This will help you track the current state (open or closed) and use the cover in automations and scenes.
 
 ```yaml
 cover:
@@ -127,6 +135,10 @@ cover:
             target:
               entity_id: cover.rts_test_shutter # change to your device id
 ```
+
+### Troubleshooting connection issues with the local API
+
+If your entities frequently become unavailable for short periods, this usually indicates connection problems between Home Assistant and your gateway. To improve reliability, try connecting to your gateway using its IP address instead of the `gateway-xxxx-xxxx-xxx.local` hostname.
 
 ### Overkiz API limits
 
@@ -156,7 +168,7 @@ If your hub (e.g. Somfy Connectivity Kit) supports HomeKit, a sensor named **Hom
 2. Retrieve the setup code value from the sensor.
 3. Use this setup code to configure the [HomeKit Controller](/integrations/homekit_controller/) integration in Home Assistant.
 
-Please note that only a [limited set of devices is supported via HomeKit](https://service.somfy.com/downloads/nl_v5/tahoma-homekitcompatibilitylist_eng.pdf).
+Only a [limited set of devices is supported via HomeKit](https://service.somfy.com/downloads/nl_v5/tahoma-homekitcompatibilitylist_eng.pdf).
 
 ## Removing the integration
 

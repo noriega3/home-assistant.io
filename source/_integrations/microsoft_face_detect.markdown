@@ -13,13 +13,13 @@ related:
 ha_quality_scale: legacy
 ---
 
-The `microsoft_face_detect` image processing {% term integration %} allows you to use the
+The **Microsoft Face Detect** {% term integration %} allows you to use the
 [Microsoft Face Identify](https://azure.microsoft.com/products/cognitive-services/)
 API through Home Assistant. This platform enables you to detect face on camera
 and fire an event with attributes.
 
 Please refer to the [Microsoft Face integration](/integrations/microsoft_face/) configuration on
-how to setup the API key.
+how to set up the API key.
 
 For using the result inside an automation rule,
 take a look at the [Image Processing integration](/integrations/image_processing/) page.

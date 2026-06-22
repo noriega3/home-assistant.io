@@ -1,6 +1,6 @@
 ---
 title: Ampio Smart Smog System
-description: Instructions on how to setup Ampio Smog sensors in Home Assistant.
+description: Instructions on how to set up Ampio Smog sensors in Home Assistant.
 ha_category:
   - Health
   - Sensor
@@ -16,7 +16,7 @@ related:
 ha_quality_scale: legacy
 ---
 
-The `ampio` air quality platform will query the open data API of [ampio.pl](http://smog.ampio.pl/) to monitor air quality sensor station.
+The **Ampio** {% term integration %} will query the open data API of [ampio.pl](http://smog.ampio.pl/) to monitor air quality sensor station.
 
 ## Setup
 
